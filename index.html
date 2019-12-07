@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Loader Using html css </title>
+	<style>
+		.loader {
+			padding: 80px;
+			animation: scale 2s infinite;
+		}
+		.loader .loader-scroll {
+			width: 100px;
+			height: 100px;
+			border: 10px double rgb(11, 25, 212);
+			margin: 0 auto;
+			position: relative;
+			border-radius: 50%;
+		}
+
+		.loader .loader-scroll::before {
+			position: absolute;
+			content: "";
+			top: 14px;
+			bottom: 14px;
+			right:  14px;
+			left: 14px;
+			border: 5px double #c20382;
+			border-radius: 3px;
+			animation: rotate-one 2s infinite;
+		}
+		.loader .loader-scroll::after {
+			position: absolute;
+			content: "";
+			top: 30px;
+			bottom: 30px;
+			right:  30px;
+			left: 30px;
+			border: 5px double #c2bf03;
+			animation: rotate2 2s infinite;
+		}
+
+		@keyframes scale {
+			0% {
+				transform: scale(.8);
+			}
+			50% {
+				transform: scale(1);
+			}
+			100% {
+				transform: scale(.4);
+			}
+		}
+		@keyframes rotate-one {
+			0%{
+				transform: rotate(360deg);
+				border-color: #c2bf03;
+			}
+			50%{
+				transform: rotate(90deg);
+				border-color: #ac03c2;
+			}
+			100%{
+				transform: rotate(s0deg);
+				border-color: #0425e2;
+			}
+		}
+
+		@keyframes rotate2 {
+			0%{
+				transform: rotate(0deg);
+				border-color: #c20382;
+			}
+			50%{
+				transform: rotate(90deg);
+				border-color: #03a5c2;
+			}
+			100%{
+				transform: rotate(360deg);
+				border-color: #13c203;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="loader">
+		<div class="loader-scroll"></div>
+	</div>
+</body>
+</html>
